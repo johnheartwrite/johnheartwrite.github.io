@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heartwrite - Write Sincere Apologies & Letters</title>
+    <meta name="description" content="Transform your relationships with heartfelt apologies. Guided writing for sincere letters that heal and connect.">
     <style>
-        /* Base Styles */
+        :root {
+            --primary: #e63946;
+            --secondary: #f1faee;
+            --accent: #a8dadc;
+            --dark: #1d3557;
+            --light: #f8f9fa;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
         }
         
         .container {
@@ -27,431 +35,287 @@
         
         /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--dark), #457b9d);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
         }
         
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #764ba2;
-            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #764ba2;
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
         }
         
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
+            padding: 4rem 0;
             text-align: center;
-            color: white;
+            background-color: var(--secondary);
         }
         
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
         }
         
         .hero p {
-            font-size: 22px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #555;
         }
         
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #764ba2;
-            padding: 15px 30px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, background-color 0.3s;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            background-color: #d32f2f;
         }
         
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background: white;
+            padding: 4rem 0;
+            background-color: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 18px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 3rem;
+            color: var(--dark);
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
         
         .feature-card {
-            background: #f9f9f9;
-            padding: 30px;
+            background: var(--light);
+            padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-        }
-        
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .feature-card p {
-            color: #666;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
         
         /* Pricing Section */
         .pricing {
-            padding: 100px 0;
-            background: #f5f7fa;
+            padding: 4rem 0;
+            background-color: var(--secondary);
         }
         
-        .pricing-grid {
+        .pricing-tiers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
-        .pricing-card {
+        .pricing-tier {
             background: white;
-            padding: 40px 30px;
+            padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .pricing-card:hover {
-            transform: translateY(-5px);
+        .tier-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--dark);
         }
         
-        .pricing-card.popular {
-            border: 2px solid #764ba2;
-            transform: scale(1.05);
+        .tier-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
         
-        .popular-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #764ba2;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .pricing-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .price {
-            font-size: 42px;
-            font-weight: 700;
-            color: #764ba2;
-            margin-bottom: 25px;
-        }
-        
-        .price span {
-            font-size: 16px;
-            font-weight: normal;
-            color: #666;
-        }
-        
-        .pricing-card ul {
+        .tier-features {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
         }
         
-        .pricing-card li {
-            padding: 8px 0;
-            color: #666;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .pricing-card li:last-child {
-            border-bottom: none;
+        .tier-features li {
+            padding: 5px 0;
         }
         
         /* Footer */
         footer {
-            background: #333;
+            background-color: var(--dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 2rem 0;
             text-align: center;
         }
         
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto 2rem;
         }
         
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .footer-links li {
-            margin: 0 15px;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
+        .waitlist-form input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
         
         .copyright {
-            margin-top: 30px;
-            color: #999;
-            font-size: 14px;
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
         
-        /* Responsive Styles */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            .nav-links {
-                margin-top: 15px;
-            }
-            
-            .nav-links li {
-                margin: 0 10px;
-            }
-            
-            .hero {
-                padding: 140px 0 80px;
-            }
-            
             .hero h1 {
-                font-size: 36px;
+                font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-            
-            .footer-links {
-                flex-direction: column;
-            }
-            
-            .footer-links li {
-                margin: 5px 0;
+            .features-grid, .pricing-tiers {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Heartwrite</a>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </nav>
+            <div class="logo">Heartwrite</div>
+            <div class="tagline">Transform relationships with heartfelt apologies</div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Write Sincere Apologies & Heartfelt Letters</h1>
-            <p>Step-by-step guidance to express your thoughts clearly and sincerely. Repair relationships with carefully crafted messages.</p>
-            <a href="#pricing" class="cta-button">Get Started Today</a>
+            <h1>Write Apologies That Heal and Connect</h1>
+            <p>Guided writing for sincere letters that mend relationships and express your true feelings. Transform difficult conversations into opportunities for connection.</p>
+            <a href="#waitlist" class="cta-button">Join Waitlist for Early Access</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features">
         <div class="container">
-            <div class="section-title">
-                <h2>How Heartwrite Helps You</h2>
-                <p>Our unique approach combines emotional intelligence with practical writing guidance</p>
-            </div>
+            <h2 class="section-title">How Heartwrite Helps You</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">1</div>
-                    <h3>Step-by-Step Guidance</h3>
-                    <p>Follow our structured process to craft sincere apologies and heartfelt letters that truly connect.</p>
+                    <div class="feature-icon">💌</div>
+                    <h3>Guided Writing Process</h3>
+                    <p>Step-by-step guidance to express your feelings clearly and sincerely without getting stuck.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">2</div>
-                    <h3>Templates & Examples</h3>
-                    <p>Professional templates and real examples for various situations and relationships.</p>
+                    <div class="feature-icon">✨</div>
+                    <h3>Tiered Approach</h3>
+                    <p>Choose from Essential, Thoughtful, or Heartfelt tiers based on your needs and relationship.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">3</div>
-                    <h3>Quick & Effective</h3>
-                    <p>Save time while ensuring your message hits the right emotional notes.</p>
+                    <div class="feature-icon">🔄</div>
+                    <h3>Relationship Building</h3>
+                    <p>Turn apologies into opportunities to strengthen bonds and improve communication.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing">
         <div class="container">
-            <div class="section-title">
-                <h2>Choose Your Plan</h2>
-                <p>Select the tier that matches your needs for expressing sincerity and repairing relationships</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Essential</h3>
-                    <div class="price">Free</div>
-                    <ul>
-                        <li>Basic step-by-step guidance</li>
-                        <li>5 apology templates</li>
-                        <li>Save up to 3 letters</li>
+            <h2 class="section-title">Choose Your Writing Tier</h2>
+            <div class="pricing-tiers">
+                <div class="pricing-tier">
+                    <div class="tier-name">Essential</div>
+                    <div class="tier-price">Free</div>
+                    <ul class="tier-features">
+                        <li>Basic apology structure</li>
+                        <li>Simple templates</li>
+                        <li>Core guidance</li>
                         <li>Standard suggestions</li>
                     </ul>
-                    <a href="#" class="cta-button">Get Started</a>
+                    <a href="#waitlist" class="cta-button">Get Started</a>
                 </div>
-                <div class="pricing-card popular">
-                    <div class="popular-tag">Most Popular</div>
-                    <h3>Thoughtful</h3>
-                    <div class="price">$4.99<span>/month</span></div>
-                    <ul>
+                <div class="pricing-tier">
+                    <div class="tier-name">Thoughtful</div>
+                    <div class="tier-price">$4.99/month</div>
+                    <ul class="tier-features">
                         <li>All Essential features</li>
                         <li>Advanced templates</li>
-                        <li>Unlimited letter saves</li>
                         <li>Personalized suggestions</li>
-                        <li>Emotion analysis</li>
+                        <li>Tone adjustment</li>
+                        <li>Relationship-specific guidance</li>
                     </ul>
-                    <a href="#" class="cta-button" style="background: #764ba2; color: white;">Go Premium</a>
+                    <a href="#waitlist" class="cta-button">Join Waitlist</a>
                 </div>
-                <div class="pricing-card">
-                    <h3>Heartfelt</h3>
-                    <div class="price">$9.99<span>/month</span></div>
-                    <ul>
+                <div class="pricing-tier">
+                    <div class="tier-name">Heartfelt</div>
+                    <div class="tier-price">$9.99/month</div>
+                    <ul class="tier-features">
                         <li>All Thoughtful features</li>
                         <li>Premium templates</li>
+                        <li>Expert writing advice</li>
+                        <li>Emotional intelligence insights</li>
                         <li>Priority support</li>
-                        <li>Relationship coaching tips</li>
-                        <li>Export to PDF/Word</li>
                     </ul>
-                    <a href="#" class="cta-button">Go Premium</a>
+                    <a href="#waitlist" class="cta-button">Join Waitlist</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="about">
+    <footer id="waitlist">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Heartwrite</div>
-                <p>Helping people communicate with sincerity and rebuild connections since 2023.</p>
-                <ul class="footer-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-                <div class="copyright">© 2023 Heartwrite. All rights reserved.</div>
+            <h2>Be the First to Know When We Launch</h2>
+            <p>Join our waitlist for early access and special launch offers</p>
+            
+            <form class="waitlist-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="cta-button">Join Waitlist</button>
+            </form>
+            
+            <div class="copyright">
+                &copy; 2024 Heartwrite. Transforming relationships one letter at a time.
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple form handling for demonstration
+        document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Thank you! ${email} has been added to our waitlist. We'll notify you when Heartwrite launches!`);
+            this.reset();
+        });
+    </script>
 </body>
 </html>
