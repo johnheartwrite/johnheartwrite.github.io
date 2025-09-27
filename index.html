@@ -4,135 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heartwrite - Write Sincere Apologies & Letters</title>
-    <meta name="description" content="Transform your relationships with heartfelt apologies. Guided writing for sincere letters that heal and connect.">
     <style>
-        :root {
-            --primary: #e63946;
-            --secondary: #f1faee;
-            --accent: #a8dadc;
-            --dark: #1d3557;
-            --light: #f8f9fa;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8f9fa; 
         }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--light);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--dark), #457b9d);
+            background: linear-gradient(135deg, #1d3557, #457b9d);
             color: white;
             padding: 2rem 0;
             text-align: center;
         }
+        .logo { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .tagline { font-size: 1.2rem; opacity: 0.9; }
         
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Hero Section */
         .hero {
             padding: 4rem 0;
             text-align: center;
-            background-color: var(--secondary);
+            background: #f1faee;
         }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: #555;
-        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #1d3557; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #555; }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--primary);
+            background: #e63946;
             color: white;
             padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: transform 0.3s, background-color 0.3s;
         }
         
-        .cta-button:hover {
-            transform: translateY(-2px);
-            background-color: #d32f2f;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 4rem 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
+        .features { padding: 4rem 0; background: white; }
+        .section-title { text-align: center; margin-bottom: 3rem; color: #1d3557; }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
         .feature-card {
-            background: var(--light);
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 4rem 0;
-            background-color: var(--secondary);
-        }
-        
+        .pricing { padding: 4rem 0; background: #f1faee; }
         .pricing-tiers {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -140,73 +65,18 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
         .pricing-tier {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .tier-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .tier-price {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .tier-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .tier-features li {
-            padding: 5px 0;
-        }
-        
-        /* Footer */
         footer {
-            background-color: var(--dark);
+            background: #1d3557;
             color: white;
             padding: 2rem 0;
             text-align: center;
-        }
-        
-        .waitlist-form {
-            max-width: 500px;
-            margin: 0 auto 2rem;
-        }
-        
-        .waitlist-form input {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .copyright {
-            margin-top: 2rem;
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .features-grid, .pricing-tiers {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -231,17 +101,17 @@
             <h2 class="section-title">How Heartwrite Helps You</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">💌</div>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💌</div>
                     <h3>Guided Writing Process</h3>
                     <p>Step-by-step guidance to express your feelings clearly and sincerely without getting stuck.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✨</div>
                     <h3>Tiered Approach</h3>
                     <p>Choose from Essential, Thoughtful, or Heartfelt tiers based on your needs and relationship.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔄</div>
                     <h3>Relationship Building</h3>
                     <p>Turn apologies into opportunities to strengthen bonds and improve communication.</p>
                 </div>
@@ -254,9 +124,9 @@
             <h2 class="section-title">Choose Your Writing Tier</h2>
             <div class="pricing-tiers">
                 <div class="pricing-tier">
-                    <div class="tier-name">Essential</div>
-                    <div class="tier-price">Free</div>
-                    <ul class="tier-features">
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Essential</div>
+                    <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #e63946;">Free</div>
+                    <ul style="list-style: none; margin-bottom: 1.5rem;">
                         <li>Basic apology structure</li>
                         <li>Simple templates</li>
                         <li>Core guidance</li>
@@ -265,9 +135,9 @@
                     <a href="#waitlist" class="cta-button">Get Started</a>
                 </div>
                 <div class="pricing-tier">
-                    <div class="tier-name">Thoughtful</div>
-                    <div class="tier-price">$4.99/month</div>
-                    <ul class="tier-features">
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Thoughtful</div>
+                    <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #e63946;">$4.99/month</div>
+                    <ul style="list-style: none; margin-bottom: 1.5rem;">
                         <li>All Essential features</li>
                         <li>Advanced templates</li>
                         <li>Personalized suggestions</li>
@@ -277,9 +147,9 @@
                     <a href="#waitlist" class="cta-button">Join Waitlist</a>
                 </div>
                 <div class="pricing-tier">
-                    <div class="tier-name">Heartfelt</div>
-                    <div class="tier-price">$9.99/month</div>
-                    <ul class="tier-features">
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Heartfelt</div>
+                    <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #e63946;">$9.99/month</div>
+                    <ul style="list-style: none; margin-bottom: 1.5rem;">
                         <li>All Thoughtful features</li>
                         <li>Premium templates</li>
                         <li>Expert writing advice</li>
@@ -296,26 +166,12 @@
         <div class="container">
             <h2>Be the First to Know When We Launch</h2>
             <p>Join our waitlist for early access and special launch offers</p>
-            
-            <form class="waitlist-form">
-                <input type="email" placeholder="Enter your email address" required>
+            <form onsubmit="event.preventDefault(); alert('Thank you! We\'ll notify you when Heartwrite launches!'); this.reset();">
+                <input type="email" placeholder="Enter your email" required style="padding: 10px; width: 300px; max-width: 100%; margin: 10px;">
                 <button type="submit" class="cta-button">Join Waitlist</button>
             </form>
-            
-            <div class="copyright">
-                &copy; 2024 Heartwrite. Transforming relationships one letter at a time.
-            </div>
+            <div style="margin-top: 2rem; opacity: 0.7;">&copy; 2024 Heartwrite</div>
         </div>
     </footer>
-
-    <script>
-        // Simple form handling for demonstration
-        document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            alert(`Thank you! ${email} has been added to our waitlist. We'll notify you when Heartwrite launches!`);
-            this.reset();
-        });
-    </script>
 </body>
 </html>
